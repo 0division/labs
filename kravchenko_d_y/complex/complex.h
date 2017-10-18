@@ -2,12 +2,15 @@
 #define COMPLEX_H_20170921  
 
 #include <iosfwd> //предварительные объявления для того что связано с потоками
+#include <cmath>
 
 struct Complex {
-	Complex() {}
-	explicit Complex(const double real);
+    Complex() = default;
+    Complex(const double real);
 	Complex(const double real, const double imaginary);
-	bool operator==(const Complex& rhs) const { return (re == rhs.re) && (im == rhs.im); }
+    Complex(const Complex& v) = default;
+    ~Complex() = default;
+    bool operator==(const Complex& rhs) const { return (std::abs(re-rhs.re)<0.0000001) && (std::abs(im-rhs.im)<0.0000001); }
 	bool operator!=(const Complex& rhs) const { return !operator==(rhs); }
 	Complex& operator+=(const Complex& rhs);
 	Complex& operator+=(const double rhs) { return operator+=(Complex(rhs)); }

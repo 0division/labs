@@ -67,3 +67,5 @@ if(VER_SUFFIX)
 endif()
 
 add_subdirectory(complex)
+add_subdirectory(vec3d)
+add_subdirectory(vec3dT)
