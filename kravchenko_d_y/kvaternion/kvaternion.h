@@ -11,10 +11,12 @@ struct Kvaternion
 
 	bool operator ==(const Kvaternion& rhs) const { return a1 == rhs.a1 && a2 == rhs.a2 && b1 == rhs.b1 && b2 == rhs.b2; }
 	bool operator !=(const Kvaternion& rhs) const { return !operator==(rhs); }
-
+    Kvaternion& operator =(const Kvaternion& rhs);
 	Kvaternion& operator +=(const Kvaternion& rhs);
 	Kvaternion& operator -=(const Kvaternion& rhs);
+    Kvaternion& operator *=(const int rhs);
 
+    void Transpose();
 	std::ostream& writeTo(std::ostream& ostrm) const;
 
 	int a1{ 0 };
@@ -30,8 +32,10 @@ inline std::ostream& operator <<(std::ostream& ostrm, const Kvaternion& rhs)
 
 Kvaternion operator+(const Kvaternion& lhs, const Kvaternion& rhs);
 Kvaternion operator-(const Kvaternion& lhs, const Kvaternion& rhs);
-
+Kvaternion operator*(const int lhs, const Kvaternion& rhs);
+Kvaternion operator*(const Kvaternion& lhs, const int rhs);
 int Determinant(const Kvaternion& k);
 
-#endif // !KVATERNION_19.10.17
+
+#endif
 
