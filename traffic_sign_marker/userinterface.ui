@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserInterface</class>
+ <widget class="QMainWindow" name="UserInterface">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>602</width>
+    <height>687</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>UserInterface</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>511</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QGraphicsView" name="graphicsView">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustToContents</enum>
+       </property>
+       <property name="transformationAnchor">
+        <enum>QGraphicsView::AnchorUnderMouse</enum>
+       </property>
+       <property name="resizeAnchor">
+        <enum>QGraphicsView::AnchorViewCenter</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>602</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuWatch_hotkeys">
+    <property name="title">
+     <string>Watch hotkeys</string>
+    </property>
+    <addaction name="actionRectangle_1"/>
+    <addaction name="actionTriangle_2"/>
+    <addaction name="actionCircle_3"/>
+    <addaction name="actionSave_next_S"/>
+    <addaction name="action_Next_C"/>
+    <addaction name="action_Back_Z"/>
+   </widget>
+   <addaction name="menuWatch_hotkeys"/>
+  </widget>
+  <action name="actionRectangle_1">
+   <property name="text">
+    <string>Rectangle 1</string>
+   </property>
+  </action>
+  <action name="actionTriangle_2">
+   <property name="text">
+    <string>Triangle 2</string>
+   </property>
+  </action>
+  <action name="actionCircle_3">
+   <property name="text">
+    <string>Circle 3</string>
+   </property>
+  </action>
+  <action name="actionSave_next_S">
+   <property name="text">
+    <string>Save+Next S</string>
+   </property>
+  </action>
+  <action name="action_Next_C">
+   <property name="text">
+    <string>Next C</string>
+   </property>
+  </action>
+  <action name="action_Back_Z">
+   <property name="text">
+    <string>Back Z</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
