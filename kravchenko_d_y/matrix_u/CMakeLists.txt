@@ -3,5 +3,5 @@ project(matrix)
  
 set(CMAKE_CXX_STANDARD 11) 
  
-set(SOURCE_FILES matrix.h matrix.cpp matrix_test.cpp) 
+set(SOURCE_FILES matrix_u.h matrix_u.cpp matrix_test.cpp)
 add_executable(matrix ${SOURCE_FILES}) 
