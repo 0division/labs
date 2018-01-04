@@ -18,10 +18,15 @@ public:
     QPointF GetPos() const{ return this->pos();}
     void SetPos(double x, double y);
     void SetPolygon(const QList<double> pointList);
+    QRectF boundingRect() const;
+    double rotation{0};
     ~FigureItem();
 
+signals:
+    void itemResized();
+
 private:
-    QRectF boundingRect() const;
+
     QPen majorPen;
     QPen outlinePen;
     QPointF mouseShiftCoords{0.0,0.0};

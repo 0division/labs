@@ -101,10 +101,9 @@ void FigureItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         }else{
             polygon << pointA << QPointF(pointB.x()+(pointC.x()-pointB.x())/2, pointB.y()) << pointD;
         }
-        update(this->boundingRect());
+        emit itemResized();
     }else if(isMoving){
         this->setPos(mapToScene(event->pos())+mouseShiftCoords);
-
     }
 }
 
@@ -136,7 +135,7 @@ void FigureItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         }else{
             polygon << pointA << QPointF(pointB.x()+(pointC.x()-pointB.x())/2, pointB.y()) << pointD;
         }
-        update(this->boundingRect());
+
     }
     this->setCursor(QCursor(Qt::ArrowCursor));
     isMoving = false;

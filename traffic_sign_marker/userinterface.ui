@@ -6,66 +6,118 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>602</width>
-    <height>687</height>
+    <width>325</width>
+    <height>386</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>UserInterface</string>
+   <string>Traffic Sign Marker</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="gridLayoutWidget">
+   <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>511</width>
-      <height>321</height>
+      <x>10</x>
+      <y>40</y>
+      <width>256</width>
+      <height>256</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <property name="spacing">
-      <number>6</number>
-     </property>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContents</enum>
+    </property>
+    <property name="transformationAnchor">
+     <enum>QGraphicsView::AnchorUnderMouse</enum>
+    </property>
+    <property name="resizeAnchor">
+     <enum>QGraphicsView::AnchorViewCenter</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>310</y>
+      <width>251</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>Welcome to TrafficSignMarker</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QToolButton" name="toolButton">
        <property name="text">
-        <string>TextLabel</string>
+        <string>...</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
+     <item>
       <widget class="QLineEdit" name="lineEdit">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QGraphicsView" name="graphicsView">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
        </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
+       <property name="baseSize">
+        <size>
+         <width>128</width>
+         <height>15</height>
+        </size>
        </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="sizeAdjustPolicy">
-        <enum>QAbstractScrollArea::AdjustToContents</enum>
-       </property>
-       <property name="transformationAnchor">
-        <enum>QGraphicsView::AnchorUnderMouse</enum>
-       </property>
-       <property name="resizeAnchor">
-        <enum>QGraphicsView::AnchorViewCenter</enum>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </item>
@@ -77,7 +129,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>602</width>
+     <width>325</width>
      <height>23</height>
     </rect>
    </property>
@@ -85,43 +137,76 @@
     <property name="title">
      <string>Watch hotkeys</string>
     </property>
-    <addaction name="actionRectangle_1"/>
-    <addaction name="actionTriangle_2"/>
-    <addaction name="actionCircle_3"/>
-    <addaction name="actionSave_next_S"/>
-    <addaction name="action_Next_C"/>
-    <addaction name="action_Back_Z"/>
+    <addaction name="actionRectangle"/>
+    <addaction name="actionTriangle"/>
+    <addaction name="actionCircle"/>
+    <addaction name="actionSave_next"/>
+    <addaction name="action_Next"/>
+    <addaction name="action_Back"/>
    </widget>
    <addaction name="menuWatch_hotkeys"/>
   </widget>
-  <action name="actionRectangle_1">
+  <action name="actionRectangle">
    <property name="text">
-    <string>Rectangle 1</string>
+    <string>Rectangle</string>
+   </property>
+   <property name="shortcut">
+    <string>1</string>
    </property>
   </action>
-  <action name="actionTriangle_2">
+  <action name="actionTriangle">
    <property name="text">
-    <string>Triangle 2</string>
+    <string>Triangle</string>
+   </property>
+   <property name="toolTip">
+    <string>Triangle</string>
+   </property>
+   <property name="shortcut">
+    <string>2</string>
    </property>
   </action>
-  <action name="actionCircle_3">
+  <action name="actionCircle">
    <property name="text">
-    <string>Circle 3</string>
+    <string>Circle</string>
+   </property>
+   <property name="toolTip">
+    <string>Circle</string>
+   </property>
+   <property name="shortcut">
+    <string>3</string>
    </property>
   </action>
-  <action name="actionSave_next_S">
+  <action name="actionSave_next">
    <property name="text">
-    <string>Save+Next S</string>
+    <string>Save+Next</string>
+   </property>
+   <property name="toolTip">
+    <string>Save+Next</string>
+   </property>
+   <property name="shortcut">
+    <string>S</string>
    </property>
   </action>
-  <action name="action_Next_C">
+  <action name="action_Next">
    <property name="text">
-    <string>Next C</string>
+    <string>Next</string>
+   </property>
+   <property name="toolTip">
+    <string>Next</string>
+   </property>
+   <property name="shortcut">
+    <string>C</string>
    </property>
   </action>
-  <action name="action_Back_Z">
+  <action name="action_Back">
    <property name="text">
-    <string>Back Z</string>
+    <string>Back</string>
+   </property>
+   <property name="toolTip">
+    <string>Back</string>
+   </property>
+   <property name="shortcut">
+    <string>Z</string>
    </property>
   </action>
  </widget>
