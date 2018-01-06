@@ -54,6 +54,32 @@ void UserInterface::LoadFromJson(){
     }
 }
 
+void UserInterface::SaveLastOpened()
+{
+    QFile jFile(qApp->applicationDirPath()+ "/last_opened.json");
+    if(jFile.exists())
+    {
+        jFile.open(QIODevice::ReadOnly | QIODevice::Text);
+        QByteArray rawData = jFile.readAll();
+        QJsonDocument jDoc(QJsonDocument::fromJson(rawData));
+        last_opened = jDoc.object();
+        jFile.close();
+
+        last_opened[pathToDir] = fileList.at(listIndex);
+
+        jFile.open(QIODevice::WriteOnly | QIODevice::Text);
+        jDoc.setObject(last_opened);
+        jFile.write(jDoc.toJson(QJsonDocument::Indented));
+        jFile.close();
+    }else{
+        jFile.open(QIODevice::WriteOnly | QIODevice::Text);
+        last_opened[pathToDir] = fileList.at(listIndex);
+        QJsonDocument jDoc(last_opened);
+        jFile.write(jDoc.toJson(QJsonDocument::Indented));
+        jFile.close();
+    }
+}
+
 
 void UserInterface::wheelEvent(QWheelEvent *event)
 {
@@ -136,6 +162,7 @@ void UserInterface::on_lineEdit_returnPressed()
             ui->label->setText("ERROR: Directory doesn't exist.");
         }
     }
+    SaveLastOpened();
 }
 
 
@@ -253,12 +280,7 @@ void UserInterface::on_action_Next_triggered()
 
         ui->label->setText(QString::number(listIndex) + ": " +fileList.at(listIndex));
 
-        last_opened[pathToDir] = fileList.at(listIndex);
-        QJsonDocument jDoc(last_opened);
-        QFile jFile(qApp->applicationDirPath()+ "/last_opened.json");
-        jFile.open(QIODevice::WriteOnly | QIODevice::Text);
-        jFile.write(jDoc.toJson(QJsonDocument::Indented));
-        jFile.close();
+        SaveLastOpened();
     }
 }
 
@@ -280,11 +302,6 @@ void UserInterface::on_action_Back_triggered()
 
         ui->label->setText(QString::number(listIndex) + ": " +fileList.at(listIndex));
 
-        last_opened[pathToDir] = fileList.at(listIndex);
-        QJsonDocument jDoc(last_opened);
-        QFile jFile(qApp->applicationDirPath()+ "/last_opened.json");
-        jFile.open(QIODevice::WriteOnly | QIODevice::Text);
-        jFile.write(jDoc.toJson(QJsonDocument::Indented));
-        jFile.close();
+        SaveLastOpened();
     }
 }

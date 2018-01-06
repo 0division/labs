@@ -47,6 +47,7 @@ private:
     QStringList fileList;
     QJsonObject linkedJsObj;
     QJsonObject last_opened;
+    void SaveLastOpened();
     int listIndex{0};
     QPen greenPen;
     FigureItem *item;
